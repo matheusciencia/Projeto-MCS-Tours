@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+}
+
+body {
+    background-color: #000;
+    color: #eee;
+    font-size: 12px;
+    overflow: hidden;
+}
+
+header {
+    width: 80%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    margin: auto;
+}
+
+header a {
+    color: #eee;
+    margin-right: 40px;
+    font-size: 17px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+header a:hover {
+    color: #fff;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    margin-top: -50px;
+    overflow: hidden;
+}
+
+.container .list .list-item {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.container .list .list-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: brightness(50%);
+}
+
+.container .list .list-item .content {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    padding-right: 30%;
+    width: 80%;
+    color: #eee;
+    text-shadow: 0 5px 10px #0004;
+}
+
+.container .list .list-item .content h2 {
+    font-size: 5em;
+    font-weight: 700;
+    line-height: 1.2em;
+}
+
+.container .list .list-item .content p {
+    font-size: 1.5em;
+}
+
+.container .list .list-item .content .buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    grid-template-rows: 50px;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.container .list .list-item .content .buttons button {
+    border: 1px solid #eee;
+    background-color: transparent;
+    color: #eee;
+    letter-spacing: 3px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.container .list .list-item .content .buttons button:hover {
+    color: #000;
+    background-color: #fff;
+    border: none;
+    transition: 0.7s;
+}
+
+.container .list .list-item .content .buttons button:active {
+    opacity: 0.5;
+    transition: 0s;
+}
+
+.container .thumb {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    display: flex;
+    gap: 20px;
+}
+
+.container .thumb .thumb-item {
+    width: 200px;
+    height: 270px;
+    position: relative;
+    cursor: pointer;
+    transition: border-radius 0.3s ease, border 0.3s ease;
+}
+
+.container .thumb .thumb-item:hover {
+    border: 3px solid #eee;
+    border-radius: 10px;
+
+}
+
+.container .thumb .thumb-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    filter: brightness(80%);
+}
+
+.container .thumb .content {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+
+}
+
+.container .arrows {
+    display: flex;
+    position: absolute;
+    bottom: 120px;
+    left: 125px;
+    width: 300px;
+    align-items: center;
+    gap: 10px;
+}
+
+.container .arrows button {
+    border-radius: 10px;
+    border: none;
+    padding: 12px 17px;
+    background-color: #eee4;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.5em;
+    color: #eee;
+}
+
+.container .arrows button:hover {
+    background-color: #fff;
+    color: #000;
+    transition: 0.7s;
+}
+
+.container.next .thumb {
+    animation: effectNextThumb 0.5s linear forwards;
+}
+
+@keyframes effectNextThumb {
+    from {
+        transform: translateX(150px);
+    }
+    
+}
+
+.container.next .thumb .thumb-item:nth-last-child(1){
+    animation: effectLastThumb 0.5s linear forwards
+}
+
+@keyframes effectLastThumb {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+}
+
+.container.prev .thumb {
+    animation: effectPrevThumb 0.5s linear forwards
+}
+
+@keyframes effectPrevThumb {
+    from {
+        transform: translateX(-150px);
+    }
+}
+
+.container.prev .thumb .thumb-item:nth-child(1){
+    animation: effectFirstThumb 0.5s linear forwards
+}
+
+@keyframes effectFirstThumb {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+}
+
+
